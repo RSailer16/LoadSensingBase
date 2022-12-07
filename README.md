@@ -17,13 +17,32 @@ which work much much better, as the force is being distrubuted down intot he met
 # Other Details
 
 ## Buying Guide
-1) [Loadcells](https://www.amazon.com/Weighing-Resistance-Half-Bridge-Amplifier-Arduino/dp/B097T3SX6W/ref=sr_1_4?keywords=load+sensors&qid=1670266200&sr=8-4) $12.99
+### Base
+1) [LoadSensors](https://www.amazon.com/Weighing-Resistance-Half-Bridge-Amplifier-Arduino/dp/B097T3SX6W/ref=sr_1_4?keywords=load+sensors&qid=1670266200&sr=8-4) (Need) $12.99
     - those come with HX711s which might work for you but they arent able to be put into 80 Hz Mode so they might appear slow to some people. they come extra at no cost so its no problem.
-2) [HX711](https://www.sparkfun.com/products/13879) you need 2 (My Choice) $10.95
-3) [M4 Bolts](https://www.amazon.com/HELIFOUNER-Pieces-Button-Washers-Stainless/dp/B09GRHHXT5/ref=sr_1_3?keywords=m4+bolts&qid=1670266352&sr=8-3) (if you dont already have them)$11.99
-4) [Hose O-Ring](https://www.amazon.com/PAGOW-Rings-Pressure-Connect-Coupler/dp/B07RZBHSNG/ref=sr_1_8?crid=1SM57JTUYDIQQ&keywords=hose+O+ring&qid=1670266422&sprefix=hose+o+rin%2Caps%2C160&sr=8-8) (random but used to creat movement in the stick. without it, you cant feel the sticks position at all) $6.99
-5) [Teensy Board 4.0](https://www.pjrc.com/store/teensy40.html) (Controller of it all) $23.8
+2) [HX711](https://www.sparkfun.com/products/13879) (Need) X2 $10.95
+3) [M4 Bolts](https://www.amazon.com/HELIFOUNER-Pieces-Button-Washers-Stainless/dp/B09GRHHXT5/ref=sr_1_3?keywords=m4+bolts&qid=1670266352&sr=8-3) (Need) $11.99
+4) [Hose O-Ring](https://www.amazon.com/PAGOW-Rings-Pressure-Connect-Coupler/dp/B07RZBHSNG/ref=sr_1_8?crid=1SM57JTUYDIQQ&keywords=hose+O+ring&qid=1670266422&sprefix=hose+o+rin%2Caps%2C160&sr=8-8) (Optional But Highly Recomended) $6.99
+5) [Teensy Board 4.0](https://www.pjrc.com/store/teensy40.html) (Need This Or Pro Micro) $23.8
     - the alternative to this is the arduino pro micro as they are much much easier to get, and to distribute. they are cheaper and look better for most people but what i found is the faster teensy 4.0 performs better as it can update the inputs faster. meaning the stick doesnt have a delay. arduinos can be bought [here](https://www.amazon.com/OSOYOO-ATmega32U4-arduino-Leonardo-ATmega328/dp/B012FOV17O) if needed.
+6) [PCB Prototype Boards](https://www.amazon.com/Smraza-Soldering-Electronic-Compatible-Prototype/dp/B07NM68FXK/ref=sr_1_5?crid=2M63TGCY4MVN4&keywords=pcb+prototype+board&qid=1670426995&sprefix=pcb+prototype+boar%2Caps%2C146&sr=8-5) (Optional. Makes things more neat) $12.99
+7) [M4 T-Nuts](https://www.amazon.com/SpzcdZa-Sliding-Fastener-Aluminum-Extrusion/dp/B08145QK3B/ref=sr_1_3?crid=3V0IXE3Q942RF&keywords=m4+t+nuts&qid=1670427050&sprefix=m4+t+nuts%2Caps%2C244&sr=8-3) (Need) $6.99
+8) [2020 Extrusion](https://www.amazon.com/European-Standard-Anodized-Aluminum-Extrusion/dp/B0B2MS2WDR/ref=sr_1_7?crid=3UK59P2XWAEUK&keywords=2020+extrusion&qid=1670427099&sprefix=2020+extrusion%2Caps%2C178&sr=8-7) (Need) $7.99
+9) [Aluminum Plate](https://www.amazon.com/Aluminum-Thickness-Double-Sided-Attached-Plates/dp/B08P16R87J/ref=sr_1_3?crid=3BVQB6U8EU4HD&keywords=aluminum+plate+6x6&qid=1670427246&sprefix=aluminum+plate+6x6%2Caps%2C131&sr=8-3) (Optional) $17.99
+#### Max Price for the base is $116.64
+    - Buying Everything on this list
+#### Lowest Price for the base is $85.6
+    - Buying only the "Need" Items
+### Grip
+1) [M3 Bolts](https://www.amazon.com/DYWISHKEY-Pieces-Socket-Screws-Wrench/dp/B07VRC5RJ8/ref=sr_1_4?crid=3M73TY7A1YCY&keywords=m3&qid=1670427689&sprefix=m%2Caps%2C331&sr=8-4) (Need) $12.69
+2) [PCBS] $22.42
+3) Ball Point Pen Spring (Optional)
+4) [4.3x6.6mm Tact Switches](https://www.amazon.com/4-3mm-Momentary-Tactile-Button-Switch/dp/B0796QL57S/ref=sr_1_3?crid=29V90019VENFP&keywords=m34.36x6+tact+switches&qid=1670427768&sprefix=m34.36x6+tact+switches%2Caps%2C114&sr=8-3) (Need) $6.99
+5) [M4 Bolts](https://www.amazon.com/HELIFOUNER-Pieces-Button-Washers-Stainless/dp/B09GRHHXT5/ref=sr_1_5?crid=1Z96RJ9RP1Q16&keywords=M4+Bolts&qid=1670427799&sprefix=m4+bolt%2Caps%2C148&sr=8-5) (Need) $11.99
+
+#### Max Price For the Grip is $54.09
+## Total Cost for it all is $
+    
 # Code
 - the code will be placed in the top of the Repo, i will attatch multiple files. look here to refrence what code you need
     - HX711_Basic_Example: this is used to test if your loadcells are registering. i used this to test my wiring before i permanently attatched everything. all you need for this sketch is to change the pins for what you attatched your hx711 to. if your HX711 Data is to pin 2 and CLK is to pin 3 then set those variables in the sketch. after this you can load it onto the teensy board, and see in the serial print the numbers. their gonna be in the thousands, its just a raw number so dont worry about the values. this is just to test that the numbers show up or move. if the serial moniter shows "HX711 Not Found" then you have a wiring issue. make sure the hx711 VCC and VDD are bridged on the hx711 and that the hx711 is getting 5v not 3v.
@@ -31,6 +50,7 @@ which work much much better, as the force is being distrubuted down intot he met
     - Grip_Mux_Example: this sketch is to test the multiplexors, and that their working. wire the multiplexors up to the board, and change the values in the sketch so that they are correctly corresponding. then upload the sketch and you should see in the serial moniter a ton of Zeros. when you press one of the button, a 1 will switch into the place of the Zeros. test that this happens for every switch. once this is done, your stick is fully functional. you just have to peice it together
     - Joy_Final: this is the final sketch combining all of the Multiplexors and the HX711s. 
 ## Sources
-- Real Cool Visualization of what im [doing](https://www.youtube.com/watch?v=0AL7oeH1EnU)
-- Very First Design i Based off [of](https://forum.dcs.world/topic/289020-force-sense-stickdiy/)
-- Open V2 3D Print [Thingiverse](
+- [Really Cool Visualization of what im doing](https://www.youtube.com/watch?v=0AL7oeH1EnU)
+- [Very First Design i Based off of](https://forum.dcs.world/topic/289020-force-sense-stickdiy/)
+- [F-16 3D Print By Jflyer81 Thingiverse](https://www.thingiverse.com/thing:4544115)
+- [F-16 3D Print With PCBS By bacon8tor](https://www.thingiverse.com/thing:4924037)
