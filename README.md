@@ -30,9 +30,9 @@ which work much much better, as the force is being distrubuted down intot he met
 8) [2020 Extrusion](https://www.amazon.com/European-Standard-Anodized-Aluminum-Extrusion/dp/B0B2MS2WDR/ref=sr_1_7?crid=3UK59P2XWAEUK&keywords=2020+extrusion&qid=1670427099&sprefix=2020+extrusion%2Caps%2C178&sr=8-7) (Need) $7.99
 9) [Aluminum Plate](https://www.amazon.com/Aluminum-Thickness-Double-Sided-Attached-Plates/dp/B08P16R87J/ref=sr_1_3?crid=3BVQB6U8EU4HD&keywords=aluminum+plate+6x6&qid=1670427246&sprefix=aluminum+plate+6x6%2Caps%2C131&sr=8-3) (Optional) $17.99
 #### Max Price for the base is $116.64
-    - Buying Everything on this list
+   - Buying Everything on this list
 #### Lowest Price for the base is $85.6
-    - Buying only the "Need" Items
+   - Buying only the "Need" Items
 ### Grip
 1) [M3 Bolts](https://www.amazon.com/DYWISHKEY-Pieces-Socket-Screws-Wrench/dp/B07VRC5RJ8/ref=sr_1_4?crid=3M73TY7A1YCY&keywords=m3&qid=1670427689&sprefix=m%2Caps%2C331&sr=8-4) (Need) $12.69
 2) [PCBS] $22.42
@@ -41,7 +41,9 @@ which work much much better, as the force is being distrubuted down intot he met
 5) [M4 Bolts](https://www.amazon.com/HELIFOUNER-Pieces-Button-Washers-Stainless/dp/B09GRHHXT5/ref=sr_1_5?crid=1Z96RJ9RP1Q16&keywords=M4+Bolts&qid=1670427799&sprefix=m4+bolt%2Caps%2C148&sr=8-5) (Need) $11.99
 
 #### Max Price For the Grip is $54.09
-## Total Cost for it all is $
+
+## Total Cost for it all is $170
+  - this is relatively expensive if you just look at it, but that compared to its [Competitor](https://realsimulator.com/fssb-r3-lighting/) which costs nearly $600 and not even coming with a grip. this is pretty good. to buy a manufactured version of this design, would cost you nearly $850 in total for the base and grip.
     
 # Code
 - the code will be placed in the top of the Repo, i will attatch multiple files. look here to refrence what code you need
