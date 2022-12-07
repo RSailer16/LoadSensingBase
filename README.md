@@ -31,4 +31,6 @@ which work much much better, as the force is being distrubuted down intot he met
     - Grip_Mux_Example: this sketch is to test the multiplexors, and that their working. wire the multiplexors up to the board, and change the values in the sketch so that they are correctly corresponding. then upload the sketch and you should see in the serial moniter a ton of Zeros. when you press one of the button, a 1 will switch into the place of the Zeros. test that this happens for every switch. once this is done, your stick is fully functional. you just have to peice it together
     - Joy_Final: this is the final sketch combining all of the Multiplexors and the HX711s. 
 ## Sources
-
+- Real Cool Visualization of what im [doing](https://www.youtube.com/watch?v=0AL7oeH1EnU)
+- Very First Design i Based off [of](https://forum.dcs.world/topic/289020-force-sense-stickdiy/)
+- Open V2 3D Print [Thingiverse](
