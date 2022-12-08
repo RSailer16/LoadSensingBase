@@ -1,0 +1,12 @@
+Designator	Footprint	Mid X	Mid Y	Ref X	Ref Y	Pad X	Pad Y	Layer	Rotation	Comment
+"1"	"SKQUCAA010 FP"	"65.41mm"	"75.97mm"	"65.41mm"	"75.97mm"	"70.56mm"	"79.22mm"	"T"	"0"	"SKQUCAA010"
+"2"	"SKQUCAA010 FP"	"37.96mm"	"53.52mm"	"37.96mm"	"53.52mm"	"32.81mm"	"50.27mm"	"T"	"180"	"SKQUCAA010"
+"3"	"SKQUCAA010 FP"	"63.91mm"	"48.42mm"	"63.91mm"	"48.42mm"	"69.06mm"	"51.67mm"	"T"	"0"	"SKQUCAA010"
+"4"	"SKQUCAA010 FP"	"17.08mm"	"48.81mm"	"17.08mm"	"48.81mm"	"13.47mm"	"53.72mm"	"T"	"94"	"SKQUCAA010"
+"16"	"KEY-TH_4P-L6.0-W6.0-P4.50-LS7.5"	"37.27mm"	"75.41mm"	"37.27mm"	"75.41mm"	"35.02mm"	"78.66mm"	"T"	"270"	"button6*6*8"
+"J1"	"HDR-M-2.54_1X8"	"43.66mm"	"72.55mm"	"43.66mm"	"73.82mm"	"43.66mm"	"63.66mm"	"T"	"90"	"HDR-M-2.54_1x8"
+"J2"	"HDR-M-2.54_1X4"	"65.76mm"	"62.77mm"	"65.76mm"	"62.77mm"	"67.07mm"	"66.35mm"	"T"	"250"	"HDR-M-2.54_1x4"
+"J3"	"HDR-M-2.54_1X8"	"15.75mm"	"68.45mm"	"14.48mm"	"68.45mm"	"24.64mm"	"68.45mm"	"T"	"180"	"HDR-M-2.54_1x8"
+"J4"	"HDR-M-2.54_1X3"	"13.84mm"	"63.25mm"	"13.84mm"	"63.25mm"	"11.3mm"	"63.25mm"	"T"	"0"	"HDR-M-2.54_1x3"
+"U1"	"SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"	"51.86mm"	"63.92mm"	"51.86mm"	"63.92mm"	"47.12mm"	"56.94mm"	"B"	"90"	"CD74HC4067M96"
+"U2"	"SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"	"17.64mm"	"55.42mm"	"17.64mm"	"55.42mm"	"10.66mm"	"60.16mm"	"B"	"0"	"CD74HC4067M96"
