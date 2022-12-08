@@ -1,8 +1,0 @@
-ID	Name	Designator	Footprint	Quantity	Manufacturer Part	Manufacturer	Supplier	Supplier Part	Price
-"1"	"SKQUCAA010"	"1,2,3,4"	"SKQUCAA010 FP"	"4"	""	""	""	""	""
-"2"	"button6*6*8"	"16"	"KEY-TH_4P-L6.0-W6.0-P4.50-LS7.5"	"1"	"button6*6*8"	"ReliaPro"	"LCSC"	"C59982"	""
-"3"	"HDR-M-2.54_1x4"	"J2"	"HDR-M-2.54_1X4"	"1"	""	""	"LCSC"	"C124378"	""
-"4"	"HDR-M-2.54_1x8"	"J1,J3"	"HDR-M-2.54_1X8"	"2"	""	""	"LCSC"	"C190820"	""
-"5"	"HDR-M-2.54_1x3"	"J4"	"HDR-M-2.54_1X3"	"1"	""	""	"LCSC"	"C180248"	""
-"6"	"CD74HC4067M96"	"U1,U2"	"SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"	"2"	"CD74HC4067M96"	"TI(德州仪器)"	"LCSC"	"C496123"	""
-"7"	"MOUSEBITES-C-2SIDES"	"U3,U4"	"MOUSEBITES-C-2SIDES"	"2"	""	""	""	""	""
