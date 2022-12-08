@@ -7,4 +7,8 @@
    - Load Sensors
    - HX711
    - Teensy 4.0
-Once you get all of these, you can begin assembly. start by Printing out
+### 2) Printing
+next youll need the parts to print the base. print out every part listen in the STL-Files, then in folder "Base" youll find all the needed stl files to print these out.
+once you have all 5 peice printed out you can begin to put it together
+    1) first your gonna take the Base and take ribbon cable and wire it through the cut outs on the bottom. i used 28 guage 6 wire, ribbon cable, this is just to keep it more tidy.
+    2) once the wiring is routed, use the wiring diagram to help make this easier. you solder 2 wires to GRN and 2 wires to WHT and one to RED and one to BLK. 
