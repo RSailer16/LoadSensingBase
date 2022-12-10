@@ -1,28 +1,27 @@
 #include "HX711.h"
+#define calibration_factor1 550 // Changes the Force required for full deflection
+#define calibration_factor2 600
+#define S0 6
+#define S1 7
+#define S2 8
+#define S3 9
 
-//Mux control pins
-#define S0 18
-#define S1 19
-#define S2 20
-#define S3 21
-
-#define TOP_SIG 17
-#define THUMB_SIG 22
+#define TOP_SIG 11
+#define THUMB_SIG 10 
 
 void setMux(int pin);
-
-// HX711 circuit wiring
-const int LOADCELL_DOUT_PIN1 = 3;
-const int LOADCELL_SCK_PIN1= 2;
-HX711 scale1;
-const int LOADCELL_DOUT_PIN2 = 5;
-const int LOADCELL_SCK_PIN2= 4;
+// Set these pins to correspond to the wiring on the hx711
+const int LC_DATA1 = 4; // Data Pin 1
+const int LC_DATA2 = 2; //Data Pin 2
+const int LC_CLK1= 5; // Clock Pin 1
+const int LC_CLK2= 3; // Clock Pin 2
+HX711 scale1; 
 HX711 scale2;
 
 void setup() {
   Serial.begin(57600);
-  scale1.begin(LOADCELL_DOUT_PIN1, LOADCELL_SCK_PIN1);
-  scale2.begin(LOADCELL_DOUT_PIN2, LOADCELL_SCK_PIN2);
+  scale1.begin(LC_DATA1, LC_CLK1);
+  scale2.begin(LC_DATA2, LC_CLK2);
 
   pinMode(S0, OUTPUT); 
   pinMode(S1, OUTPUT); 
@@ -33,10 +32,13 @@ void setup() {
   digitalWrite(S1, LOW);
   digitalWrite(S2, LOW);
   digitalWrite(S3, LOW);
-
   pinMode(TOP_SIG, INPUT_PULLUP);
   pinMode(THUMB_SIG, INPUT_PULLUP);
-  //Joystick.begin();
+
+  scale1.set_scale(calibration_factor1);
+  scale2.set_scale(calibration_factor2);
+  scale1.tare();
+  scale2.tare();
 }
 
 void loop() {
@@ -44,25 +46,20 @@ void loop() {
   if (scale1.is_ready()) {
     long reading = scale1.read();
     Serial.print("HX711 X Axis: ");
-    
-    Serial.print(scale1.get_units() * .0017 + 844);
-    Joystick.X(scale1.get_units() * .0017 + 844);
+    Serial.print(scale1.get_units() + 512);
+    Joystick.X(scale1.get_units() + 512);
   }
   if (scale2.is_ready()) {
     long reading = scale2.read();
-    Serial.print("   HX711 Y Axis: ");
-    Serial.println(-scale2.get_units() * .0017 + 52);
-    Joystick.Y(-scale2.get_units() * .0017 + 52);
+    Serial.print("HX711 Y Axis: ");
+    Serial.println(scale2.get_units() + 512);
+    Joystick.Y(scale2.get_units() + 512);
   }
 //end read axis inputs
 
   //read button inputs
   for (int i=0; i<16; i++) {
     setMuxs(i);
-    //Serial.print(digitalRead(TOP_SIG));
-    //Serial.print(digitalRead(THUMB_SIG));
-    //Serial.println();
-    //read the value at the SIG pin and send to joystick
     if (i == 0) {
       Joystick.button(26, !digitalRead(TOP_SIG));
     } else {
@@ -73,11 +70,6 @@ void loop() {
       Joystick.button(i+16, !digitalRead(THUMB_SIG));
     }
   }
-  //Serial.println();
-  //end of read button inputs
-  
-  //delay(1);
-  
 }
 
 void setMuxs(int channel){
