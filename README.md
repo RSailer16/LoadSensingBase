@@ -1,8 +1,8 @@
 # Overview
-This is a modification/revision/update to the Jflyer F-16 Grip on thingiverse. in thise design i took his model and changed it and modified it to fit onto a 2020 extrusion. i then used The open Viper Hotas V2 By Bacon8tor on thingiverse, which took the original Jflyer81 model and added pcb support so you dont have to wire every wire to each button, and rather just use 5 Pos Navigation Switches From ada fruit. i created my own base that uses loadcells to measure your force applied vs ange of motion. this is realistic to the actual jet as that f-16 has a force sensing stick rather than that of a F-15 which measure where your stick is using hall effect sensors. below i will list the things i used, the code produced during this project, the issues, the versions, and everything i have used to get started.
+  - This is a modification/revision/update to the Jflyer F-16 Grip on thingiverse. in thise design i took his model and changed it and modified it to fit onto a 2020 extrusion. i then used The open Viper Hotas V2 By Bacon8tor on thingiverse, which took the original Jflyer81 model and added pcb support so you dont have to wire every wire to each button, and rather just use 5 Pos Navigation Switches From ada fruit. i created my own base that uses loadcells to measure your force applied vs ange of motion. this is realistic to the actual jet as that f-16 has a force sensing stick rather than that of a F-15 which measure where your stick is using hall effect sensors. below i will list the things i used, the code produced during this project, the issues, the versions, and everything i have used to get started.
 # Parts made
 ## The Grip
-To make the grip i used the Open Viper Hotas V2 By Bacon8tor. this is a remix of the original grip by Jflyer81 but this one has support for pcb such that you use Adafruits 5 way Thru Hole navigational switch. this means there is less soldering, 3D Printing, And effort in making this. everything went smoothely for me, but it depends on your printer. the pcbs were the tricky part, you have to order them from PCB Way or Any company that can manufactur pcbs. they take about 2 weeks to get here, and come fully assembled. they costed $20 and you get two sets of them depending on where you order them from. After all this it should go together realy well. links to all products are in the description.
+  - To make the grip i used the Open Viper Hotas V2 By Bacon8tor. this is a remix of the original grip by Jflyer81 but this one has support for pcb such that you use Adafruits 5 way Thru Hole navigational switch. this means there is less soldering, 3D Printing, And effort in making this. everything went smoothely for me, but it depends on your printer. the pcbs were the tricky part, you have to order them from PCB Way or Any company that can manufactur pcbs. they take about 2 weeks to get here, and come fully assembled. they costed $20 and you get two sets of them depending on where you order them from. After all this it should go together realy well. links to all products are in the description.
 ## The Base
 the base was probably the most tricky part. it went through many iterations, some worked some failed, but i learned from them all. the first design used traditionaly wheatstone bridge loadcells, like these seen here
 
@@ -69,8 +69,8 @@ which work much much better, as the force is being distrubuted down intot he met
 ### 2) Printing/Wiring
 next youll need the parts to print the base. print out every part listen in the STL-Files, then in folder "Base" youll find all the needed stl files to print these out.
 once you have all 5 peice printed out you can begin to put it together
-    1) first your gonna take the Base and take ribbon cable and wire it through the cut outs on the bottom. i used 28 guage 6 wire, ribbon cable, this is just to keep it more tidy.
-    2) once the wiring is routed, use the wiring diagram to help make this easier. you solder 2 wires to GRN and 2 wires to WHT and one to RED and one to BLK. you need to follow the wiring diagram but once the wires are through the base you then solder the load sensors onto them. 
+  - first your gonna take the Base and take ribbon cable and wire it through the cut outs on the bottom. i used 28 guage 6 wire, ribbon cable, this is just to keep it more tidy.
+  - once the wiring is routed, use the wiring diagram to help make this easier. you solder 2 wires to GRN and 2 wires to WHT and one to RED and one to BLK. you need to follow the wiring diagram but once the wires are through the base you then solder the load sensors onto them. 
    #### Wiring diagram
     
     
@@ -81,4 +81,18 @@ once you have all 5 peice printed out you can begin to put it together
   - you have to take the base, and the wired loadsensors, and wire them to the hx711. look the the picture below for refrence:
 
   - make sure the hx711s are in 80 hz mode. (cut the trace on the backside of them)
-  - once this is finished, screw them down into place
+  - once this is finished, screw them down into place.
+  - after securing the HX711s, you need to make the PCB board. it isnt as important because you dont need it, you can just solder directly to the teensy, but the PCB makes it much more tidy. ill attatch pictures of the pcb in case you want them
+  - then solder the hx711 to the board, and test it with the corresponding code.
+  - once done. plug in the micro usb, and upload the code.
+  - Follow (bacon8tor`s)[https://www.thingiverse.com/thing:4924037] thingiverse for wiring the grip. 
+  - connect the following wires to the corresponding pins
+    - S0: 6
+    - S1: 7
+    - S2: 8
+    - S3: 9
+    - TOP_SIG: 11
+    - BOT_SIG: 10
+  - then upload the Final_Joy code and everything should be good.
+     
+  
