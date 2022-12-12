@@ -1,4 +1,5 @@
 #include "HX711.h"
+#include <EEPROM.h>
 #define calibration_factor1 outputValue 
 #define calibration_factor2 outputValue
 #define S0 6
@@ -42,7 +43,7 @@ Serial.begin(9600);
 void loop() {
 // Pot range mapping
 int sensorValue = analogRead(A9);
-outputValue = map(sensorValue, 0, 1023, 200, 700);
+outputValue = map(sensorValue, 0, 1023, 200, 800);
 
 //HX711 to joystick conversion
 if (scale1.is_ready()) {
