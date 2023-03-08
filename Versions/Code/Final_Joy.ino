@@ -17,6 +17,7 @@ const int LC_DATA1 = 4; // Data Pin 1
 const int LC_DATA2 = 2; //Data Pin 2
 const int LC_CLK1= 5; // Clock Pin 1
 const int LC_CLK2= 3; // Clock Pin 2
+int angle = -1; //hat switch angle
 HX711 scale1; 
 HX711 scale2;
 
@@ -41,42 +42,70 @@ Serial.begin(9600);
 }
 
 void loop() {
-// Pot range mapping
-int sensorValue = analogRead(A9);
-outputValue = map(sensorValue, 0, 1023, 200, 800);
+  // Pot range mapping
+  int sensorValue = analogRead(A9);
+  outputValue = map(sensorValue, 0, 1023, 200, 800);
 
-//HX711 to joystick conversion
-if (scale1.is_ready()) {
-long reading = scale1.read();
-Joystick.X(scale1.get_units() / calibration_factor1 + 512);
+  //HX711 to joystick conversion
+  if (scale1.is_ready()) {
+    long reading = scale1.read();
+    Joystick.X(scale1.get_units() / calibration_factor1 + 512);
   }
-if (scale2.is_ready()) {
-long reading = scale2.read();
-Joystick.Y(scale2.get_units() / calibration_factor2 + 512);
+  if (scale2.is_ready()) {
+    long reading = scale2.read();
+    Joystick.Y(scale2.get_units() / calibration_factor2 + 512);
   }
-// Buttons to Joystick conversion
-for (int i=0; i<16; i++) {
-setMuxs(i);
-if (i == 0) {
-Joystick.button(26, !digitalRead(TOP_SIG));
- } else {
-Joystick.button(i,!digitalRead(TOP_SIG));
- }
-// There are only 5 inputs for the thumb joystick board so dont try to send any buttons to computer
-if (i<=5) {
-Joystick.button(i+16, !digitalRead(THUMB_SIG));
-}
-// Serial Prints
-//    Serial.print(digitalRead(THUMB_SIG)); // Prints Mux Readings for Thumb stick
-//    Serial.print(digitalRead(TOP_SIG)); // Prints Mux Readings for top pcb
-//    Serial.print("HX711 X Axis: "); // Prints X Axis
-//    Serial.print(scale1.get_units() / calibration_factor1 + 512); // Prints X Axis
-//    Serial.print("HX711 Y Axis: "); // Prints Y Axis
-//    Serial.println(scale2.get_units() / calibration_factor2 + 512); // Prints Y Axis
-//    Serial.println(outputValue); // Prints Pot for adjusting the force required
-//    Serial.println(calibration_factor1); Prints the Calibration factor
+
+  angle = -1;
+
+  // Buttons to Joystick conversion
+  for (int i=0; i<16; i++) {
+    setMuxs(i);
+    if (i == 0) {
+      Joystick.button(26, !digitalRead(TOP_SIG));
+    } else {
+      Joystick.button(i,!digitalRead(TOP_SIG));
+
+
+    if ((i == 9) && (!digitalRead(TOP_SIG)) == 1) {
+      angle = 0;
+
+    } 
+
+    else if ((i == 8) && (!digitalRead(TOP_SIG)) == 1) {
+      angle = 90;
+
+    }
+
+    else if ((i == 11) && (!digitalRead(TOP_SIG)) == 1) {
+      angle = 180;
+
+    } 
+
+    else if ((i == 10) && (!digitalRead(TOP_SIG)) == 1) {
+      angle = 270;
+
+    } 
+
   }
-  Serial.println();
+  // There are only 5 inputs for the thumb joystick board so dont try to send any buttons to computer
+  if (i<=5) {
+  Joystick.button(i+16, !digitalRead(THUMB_SIG));
+  }
+  // Serial Prints
+  //    Serial.print(digitalRead(THUMB_SIG)); // Prints Mux Readings for Thumb stick
+  //    Serial.print(digitalRead(TOP_SIG)); // Prints Mux Readings for top pcb
+  //    Serial.print("HX711 X Axis: "); // Prints X Axis
+  //    Serial.print(scale1.get_units() / calibration_factor1 + 512); // Prints X Axis
+  //    Serial.print("HX711 Y Axis: "); // Prints Y Axis
+  //    Serial.println(scale2.get_units() / calibration_factor2 + 512); // Prints Y Axis
+  //    Serial.println(outputValue); // Prints Pot for adjusting the force required
+  //    Serial.println(calibration_factor1); Prints the Calibration factor
+      //Serial.println(digitalRead(S0));
+    }
+    //Serial.println();
+
+  Joystick.hat(angle);
   
 }
 
@@ -102,9 +131,15 @@ void setMuxs(int channel){
     {1,1,1,1}  //channel 15
   };
 
+
   //loop through the 4 sig
   for(int i = 0; i < 4; i ++){
     digitalWrite(controlPin[i], muxChannel[channel][i]);
+    
+//Serial.print(controlPin[i]);
+    
   }
+
+  //Serial.println();
   delay(1);
 }
